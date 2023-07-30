@@ -49,6 +49,7 @@ body {
   scale: var(--_width, 0.125) 1;
   translate: var(--_left, 0) 0;
   transform-origin: left;
+  transition: translate 200ms ease-in-out, scale 200ms ease-in-out;
   background: white;
 
   /*opacity: 0.8;*/
