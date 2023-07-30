@@ -74,14 +74,27 @@ function switchTab(newTab) {
 
 // move underline indicator
 function moveIndicator(oldTab, newTab) {
-  // Very strange function, if newTab is on the right side of the oldTab, return 4;
-  // if newTab is on the left side of the oldTab, return 2;
+  // Very strange function, if newTab is on the right side of the oldTab, return 4; if newTab is on the left side of the oldTab, return 2;
   const newTabPosition = oldTab.compareDocumentPosition(newTab);
-  console.log(newTabPosition);
+  // console.log(newTabPosition);
+  let transitionWidth;
+
+  // if the new tab is to the right
+  if (newTabPosition === 4) {
+    transitionWidth =
+      newTab.offsetLeft + newTab.offsetWidth - oldTab.offsetLeft;
+  }
 
   // Using scale instead of animating width just because it's better for animation performance
   const newTabWidth = newTab.offsetWidth / tabsContainer.offsetWidth;
 
-  tabsContainer.style.setProperty('--_left', newTab.offsetLeft + 'px');
-  tabsContainer.style.setProperty('--_width', newTabWidth);
+  // tabsContainer.style.setProperty('--_left', newTab.offsetLeft + 'px');
+  // tabsContainer.style.setProperty('--_width', newTabWidth);
+
+  // Make it stretch to the correct end position (right side of the new tab) first
+  // (you can see this by refreshing the page and click any tab for the first time)
+  tabsContainer.style.setProperty(
+    '--_width',
+    transitionWidth / tabsContainer.offsetWidth
+  );
 }
