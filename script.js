@@ -68,10 +68,10 @@ function switchTab(newTab) {
   newTab.setAttribute('aria-selected', true);
   newTab.setAttribute('tabindex', '0');
   newTab.focus();
-  moveIndicator();
+  moveIndicator(newTab);
 }
 
 // move underline indicator
-function moveIndicator(oldTab, newTab) {
-  tabsContainer.style.setProperty('--_left', 100 + 'px');
+function moveIndicator(newTab) {
+  tabsContainer.style.setProperty('--_left', newTab.offsetLeft + 'px');
 }
