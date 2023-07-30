@@ -5,3 +5,7 @@ https://codepen.io/kevinpowell/pen/vYQVGgm
 https://github.com/Annie-Huang/youtube-tabs
 
 --------------------------------------------------------------------------------------
+
+Using scale instead of animating width to control the width size of the underline
+just because it's better for animation performance
+

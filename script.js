@@ -73,5 +73,9 @@ function switchTab(newTab) {
 
 // move underline indicator
 function moveIndicator(newTab) {
+  // Using scale instead of animating width just because it's better for animation performance
+  const newTabWidth = newTab.offsetWidth / tabsContainer.offsetWidth;
+
   tabsContainer.style.setProperty('--_left', newTab.offsetLeft + 'px');
+  tabsContainer.style.setProperty('--_width', newTabWidth);
 }
