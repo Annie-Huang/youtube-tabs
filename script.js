@@ -109,5 +109,7 @@ function moveIndicator(oldTab, newTab) {
   setTimeout(() => {
     tabsContainer.style.setProperty('--_left', newTab.offsetLeft + 'px');
     tabsContainer.style.setProperty('--_width', newTabWidth);
-  }, 200);
+
+    // if we keep the timeout the same figure as the animation, e.g. 200, you will see the bouncing effect of the underline when you switch between tabs. Make the timeout longer to resolve this problem
+  }, 220);
 }
