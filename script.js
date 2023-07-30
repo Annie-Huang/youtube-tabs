@@ -83,6 +83,12 @@ function moveIndicator(oldTab, newTab) {
   if (newTabPosition === 4) {
     transitionWidth =
       newTab.offsetLeft + newTab.offsetWidth - oldTab.offsetLeft;
+  } else {
+    // if the tab is to the left
+    transitionWidth =
+      oldTab.offsetLeft + oldTab.offsetWidth - newTab.offsetLeft;
+    // We need the 'left' position shift straight away, not wait for timeout.
+    tabsContainer.style.setProperty('--_left', newTab.offsetLeft + 'px');
   }
 
   // Using scale instead of animating width just because it's better for animation performance
