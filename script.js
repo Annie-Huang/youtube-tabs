@@ -73,6 +73,7 @@ function switchTab(newTab) {
 }
 
 // move underline indicator
+// The way the youtube tab move is stretch the underline bar to the position that cover both tabs first, and the shrink the underline bar to the correct start point or end point of the new tab.
 function moveIndicator(oldTab, newTab) {
   // Very strange function, if newTab is on the right side of the oldTab, return 4; if newTab is on the left side of the oldTab, return 2;
   const newTabPosition = oldTab.compareDocumentPosition(newTab);
