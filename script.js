@@ -97,4 +97,10 @@ function moveIndicator(oldTab, newTab) {
     '--_width',
     transitionWidth / tabsContainer.offsetWidth
   );
+
+  // After it finishes stretching, shrinks the width to the correct position
+  setTimeout(() => {
+    tabsContainer.style.setProperty('--_left', newTab.offsetLeft + 'px');
+    tabsContainer.style.setProperty('--_width', newTabWidth);
+  }, 200);
 }
