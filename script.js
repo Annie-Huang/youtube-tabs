@@ -50,6 +50,7 @@ function moveRight() {
 }
 
 function switchTab(newTab) {
+  const oldTab = tabsContainer.querySelector('[aria-selected="true"]');
   const activePanelId = newTab.getAttribute('aria-controls');
   const activePanel = tabsContainer.nextElementSibling.querySelector(
     '#' + CSS.escape(activePanelId)
@@ -68,11 +69,11 @@ function switchTab(newTab) {
   newTab.setAttribute('aria-selected', true);
   newTab.setAttribute('tabindex', '0');
   newTab.focus();
-  moveIndicator(newTab);
+  moveIndicator(oldTab, newTab);
 }
 
 // move underline indicator
-function moveIndicator(newTab) {
+function moveIndicator(oldTab, newTab) {
   // Using scale instead of animating width just because it's better for animation performance
   const newTabWidth = newTab.offsetWidth / tabsContainer.offsetWidth;
 
