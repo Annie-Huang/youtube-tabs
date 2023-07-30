@@ -1,0 +1,7 @@
+Recreating YouTube’s tab animation (https://www.youtube.com/watch?v=h2AOXBeVrgI)
+
+https://codepen.io/kevinpowell/pen/abQEBMb
+https://codepen.io/kevinpowell/pen/vYQVGgm
+https://github.com/Annie-Huang/youtube-tabs
+
+--------------------------------------------------------------------------------------
